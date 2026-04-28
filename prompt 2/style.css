@@ -1,0 +1,178 @@
+/* --- Variables CSS (Mode Clair par défaut) --- */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --header-bg: #ffffff;
+    --accent-color: #ff6b6b;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Variables CSS (Mode Sombre) --- */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --header-bg: #1e1e1e;
+    --accent-color: #ff8787;
+    --card-bg: #2d2d2d;
+    --shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
+}
+
+/* --- Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s; /* Transition douce pour le dark mode */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Header et Navigation --- */
+header {
+    background-color: var(--header-bg);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: var(--shadow);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-liens {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-liens a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.nav-liens a:hover {
+    color: var(--accent-color);
+}
+
+/* Bouton Dark Mode */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Menu Burger (caché sur PC) */
+.menu-burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-burger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* --- Sections Générales --- */
+section {
+    padding: 100px 5% 50px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.texte-accent {
+    color: var(--accent-color);
+}
+
+/* --- Boutons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* --- Grille Projets --- */
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.carte {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-bg);
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .menu-burger {
+        display: flex; /* Afficher le burger sur mobile */
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: -100%; /* Menu caché hors de l'écran par défaut */
+        width: 100%;
+        background-color: var(--header-bg);
+        box-shadow: var(--shadow);
+        transition: left 0.3s ease;
+    }
+
+    nav.actif {
+        left: 0; /* Le JS ajoutera cette classe pour afficher le menu */
+    }
+
+    .nav-liens {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+}
