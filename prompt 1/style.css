@@ -1,0 +1,193 @@
+/* --- Variables de couleurs --- */
+:root {
+    --primaire: #2c3e50;
+    --secondaire: #3498db;
+    --fond: #f4f7f6;
+    --texte: #333333;
+    --blanc: #ffffff;
+}
+
+/* --- Reset basique --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fond);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+/* --- Navigation --- */
+header {
+    background-color: var(--blanc);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primaire);
+    text-decoration: none;
+}
+
+.nav-liens {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-liens a {
+    text-decoration: none;
+    color: var(--texte);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-liens a:hover {
+    color: var(--secondaire);
+}
+
+/* --- Section Accueil (Hero) --- */
+.accueil {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 60px;
+}
+
+.accueil h1 {
+    font-size: 3.5rem;
+    color: var(--primaire);
+    margin-bottom: 10px;
+}
+
+.accueil h2 {
+    font-size: 1.5rem;
+    color: var(--secondaire);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.bouton {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--secondaire);
+    color: var(--blanc);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.bouton:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* --- Section Projets --- */
+.projets {
+    padding: 5rem 5%;
+    background-color: var(--blanc);
+    text-align: center;
+}
+
+.titre-section {
+    font-size: 2.5rem;
+    color: var(--primaire);
+    margin-bottom: 3rem;
+}
+
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.carte-projet {
+    background-color: var(--fond);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carte-projet:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carte-projet h3 {
+    color: var(--primaire);
+    margin-bottom: 15px;
+}
+
+.carte-projet p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.lien-projet {
+    color: var(--secondaire);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Section Contact --- */
+.contact {
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: var(--primaire);
+    color: var(--blanc);
+}
+
+.contact .titre-section {
+    color: var(--blanc);
+}
+
+.contact p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1a252f;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-liens {
+        display: none; 
+    }
+    .accueil h1 {
+        font-size: 2.5rem;
+    }
+}
